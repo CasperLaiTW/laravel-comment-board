@@ -16,6 +16,12 @@ class Comment extends \LaravelBook\Ardent\Ardent {
     public static $passwordAttributes  = array('');
     public $autoHashPasswordAttributes = true;
     public $autoPurgeRedundantAttributes = true;
+    // validation rule
+    public static $rules = array('user_id'   =>  'required',
+                                  'title'    =>  'required',
+                                  'body'    =>  'required'
+                                );
+    public static $customMessages =array('required'    =>  '請輸入 :attribute');
     // reference
     public static $relationsData = array(
         'user'  =>  array(self::BELONGS_TO, 'User')
