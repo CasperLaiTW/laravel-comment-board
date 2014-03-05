@@ -23,7 +23,7 @@
 
           <div class="masthead clearfix">
             <div class="inner">
-              <h3 class="masthead-brand">Cover</h3>
+              <h3 class="masthead-brand">Comment board</h3>
               <ul class="nav masthead-nav">
                 <li class="active"><a href="#">Home</a></li>
               </ul>
