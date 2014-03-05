@@ -17,6 +17,7 @@
     "bootstrap": "~3.0.0",
     "html5shiv": "~3.7.0",
     "respond": "~1.3.0",
-    "noty" : "*"
+    "noty" : "*",
+    "jquery": "jquery#1.10"
   }
 }
