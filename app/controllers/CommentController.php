@@ -23,6 +23,9 @@ class CommentController extends \BaseController {
 	public function create()
 	{
 		//
+		$menu_active = "/comment/create";
+		$user = \User::first();
+		return View::make('comment.create', compact('menu_active', 'user'));
 	}
 
 	/**
