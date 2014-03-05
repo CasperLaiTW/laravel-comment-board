@@ -1,5 +1,5 @@
 <?php
-
+use \Illuminate\Database\Eloquent\ModelNotFoundException;
 class CommentController extends \BaseController {
 
 	/**
@@ -69,6 +69,20 @@ class CommentController extends \BaseController {
 	public function edit($id)
 	{
 		//
+		try
+		{
+			$menu_active = "";
+			$user = \User::first();
+			$comment = \Comment::find($id);
+			return View::make('comment.edit', compact('menu_active', 'comment', 'user'));
+		}
+		catch(ModelNotFoundException $e)
+		{
+			return Redirect::route('comment.index')
+				   ->with('message', '無此筆資料')
+				   ->with('style', 'Information');
+		}
+
 	}
 
 	/**
