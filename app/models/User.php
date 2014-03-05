@@ -29,7 +29,7 @@ class User extends \LaravelBook\Ardent\Ardent  implements UserInterface, Reminda
     public $autoPurgeRedundantAttributes = true;
     // reference
     public static $relationsData = array(
-    	'comments'	=>	array(self::HAS_MENY, 'Comment')
+    	'comments'	=>	array(self::BELONGS_TO_MANY, 'Comment')
     );
 	/**
 	 * Get the unique identifier for the user.
