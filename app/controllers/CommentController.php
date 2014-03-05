@@ -94,6 +94,26 @@ class CommentController extends \BaseController {
 	public function update($id)
 	{
 		//
+		try
+		{
+			$comment = \Comment::find($id);
+			if($comment->save())
+			{
+				return Redirect::route('comment.index')->with('message', '新增完成');
+			}
+			else
+			{
+			return Redirect::route('comment.edit', $comment->id)
+				   ->withInput()
+				   ->withErrors($comment->errors());
+			}
+		}
+		catch(ModelNotFoundException $e)
+		{
+			return Redirect::route('comment.index')
+				   ->with('message', '無此筆資料')
+				   ->with('style', 'Information');
+		}
 	}
 
 	/**
