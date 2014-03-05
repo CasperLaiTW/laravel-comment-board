@@ -109,7 +109,6 @@ body {
 
 .cover {
   padding: 0 20px;
-  padding-top:80px;
 }
 .cover .btn-lg {
   padding: 10px 20px;
@@ -143,7 +142,7 @@ body {
   }
   /* Start the vertical centering */
   .site-wrapper-inner {
-    vertical-align: middle;
+    padding-top: 80px;
   }
   /* Handle the widths */
   .masthead,
