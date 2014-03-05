@@ -10,8 +10,9 @@ class CommentController extends \BaseController {
 	public function index()
 	{
 		//
+		$menu_active = "/comment";
 		$comments = \Comment::all();
-		return View::make('comment.index', compact('comments'));
+		return View::make('comment.index', compact('menu_active', 'comments'));
 	}
 
 	/**
