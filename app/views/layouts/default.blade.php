@@ -31,7 +31,7 @@
               </ul>
             </div>
           </div>
-
+          @include('_partials/_noty_contain')
           <div class="inner cover">
             @yield('main')
           </div>
