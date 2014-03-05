@@ -36,6 +36,17 @@ class CommentController extends \BaseController {
 	public function store()
 	{
 		//
+		$comment = new \Comment;
+		if($comment->save())
+		{
+			return Redirect::route('comment.index')->with('message', '新增完成');
+		}
+		else
+		{
+			return Redirect::route('comment.create')
+				   ->withInput()
+				   ->withErrors($comment->errors());
+		}
 	}
 
 	/**
