@@ -48,7 +48,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'command-board',
+			'database'  => 'comment-board',
 			'username'  => 'comment-user',
 			'password'  => 'comment@user',
 			'charset'   => 'utf8',
