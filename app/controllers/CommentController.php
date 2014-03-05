@@ -10,6 +10,8 @@ class CommentController extends \BaseController {
 	public function index()
 	{
 		//
+		$comments = \Comment::all();
+		return View::make('comment.index', compact('comments'));
 	}
 
 	/**
