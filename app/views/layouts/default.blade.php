@@ -24,8 +24,9 @@
           <div class="masthead clearfix">
             <div class="inner">
               <h3 class="masthead-brand">Comment board</h3>
-              <ul class="nav masthead-nav">
-                <li class="active"><a href="#">Home</a></li>
+              <ul id="menu" class="nav masthead-nav">
+                <li><a href="{{ URL::route('comment.index') }}">Home</a></li>
+                <li><a href="{{ URL::route('comment.create') }}">Create</a></li>
               </ul>
             </div>
           </div>
@@ -37,8 +38,9 @@
         </div>
 
       </div>
-
+  
     </div>
+    <input type="hidden" name="menu_active" id="menu_active" value="{{$menu_active}}">
     @include('_partials._asset_js')
     @yield('asset-js')
   </body>

@@ -2,3 +2,5 @@
 <script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="/components/noty/js/noty/packaged/jquery.noty.packaged.min.js"></script>
 <script src="/js/run-noty.js"></script>
+<script src="/js/menu_active.js"></script>
+
