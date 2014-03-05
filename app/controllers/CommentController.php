@@ -125,6 +125,22 @@ class CommentController extends \BaseController {
 	public function destroy($id)
 	{
 		//
+		try
+		{
+			$comment = \Comment::find($id);
+			// soft Delete
+			// Now will throw exception. need to check.
+			// $comment->softDeletes();
+			// reald Delete
+			$comment->delete();
+			return Redirect::route('comment.index')->with('message', '刪除完成');
+		}
+		catch(ModelNotFoundException $e)
+		{
+			return Redirect::route('comment.index')
+				   ->with('message', '無此筆資料')
+				   ->with('style', 'Information');
+		}
 	}
 
 }

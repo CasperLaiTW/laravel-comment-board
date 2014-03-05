@@ -16,6 +16,8 @@ class Comment extends \LaravelBook\Ardent\Ardent {
     public static $passwordAttributes  = array('');
     public $autoHashPasswordAttributes = true;
     public $autoPurgeRedundantAttributes = true;
+    // Turn on sofe delete.
+    protected $softDelete = true;
     // validation rule
     public static $rules = array('user_id'   =>  'required',
                                   'title'    =>  'required',
