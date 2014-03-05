@@ -12,17 +12,4 @@ class BaseController extends Controller {
 			View::share('message_style', $message_style);
 		}
 	}
-	/**
-	 * Setup the layout used by the controller.
-	 *
-	 * @return void
-	 */
-	protected function setupLayout()
-	{
-		if ( ! is_null($this->layout))
-		{
-			$this->layout = View::make($this->layout);
-		}
-	}
-
 }
