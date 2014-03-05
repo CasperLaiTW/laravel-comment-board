@@ -3,7 +3,7 @@
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
-class User extends Eloquent implements UserInterface, RemindableInterface {
+class User extends \LaravelBook\Ardent\Ardent  implements UserInterface, RemindableInterface {
 
 	/**
 	 * The database table used by the model.
@@ -18,7 +18,19 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 * @var array
 	 */
 	protected $hidden = array('password');
-
+	// guard
+	protected $guarded = array('_token');
+	// hydrates on new entries' validation
+	public $autoHydrateEntityFromInput = true;
+	// hydrates whenever validation is called
+    public $forceEntityHydrationFromInput = true;
+    public static $passwordAttributes  = array('password');
+    public $autoHashPasswordAttributes = true;
+    public $autoPurgeRedundantAttributes = true;
+    // reference
+    public static $relationsData = array(
+    	'comments'	=>	array(self::HAS_MENY, 'Comment')
+    );
 	/**
 	 * Get the unique identifier for the user.
 	 *
